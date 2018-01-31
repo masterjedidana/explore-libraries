@@ -1,7 +1,7 @@
 01\_explore-libraries\_comfy.R
 ================
 dag
-Wed Jan 31 16:05:04 2018
+Wed Jan 31 16:11:13 2018
 
 ``` r
 library(usethis)
