@@ -13,3 +13,7 @@ shows the history of the file
 ### .gitignore & .Rproj
 
 Debate wheather to put under version control 
+
+
+This is a line I added from github
+
