@@ -1,11 +1,26 @@
 01\_explore-libraries\_comfy.R
 ================
 dag
-Wed Jan 31 16:11:13 2018
+Wed Jan 31 16:26:38 2018
 
 ``` r
+## Libraries 
+
 library(usethis)
+library(fs)
+library(dplyr)
 ```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
 
 Which libraries does R search for packages?
 
@@ -23,15 +38,10 @@ Which libraries does R search for packages?
     ## [1] "C:/PROGRA~1/R/R-34~1.3/library"
 
 ``` r
-library(fs)
 path_real(.Library) # show the true path (not sympolic link)
 ```
 
     ## C:/Program Files/R/R-3.4.3/library
-
-``` r
-# try .libPaths(), .Library
-```
 
 Installed packages
 
@@ -137,21 +147,6 @@ summary(pk$Version)
 ##   * what proportion need compilation?
 ##   * how break down re: version of R they were built on
 
-library(dplyr)
-```
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 ## for tidyverts, here are some useful patterns
 # data %>% count(var)
 pk %>% count(LibPath)
@@ -247,4 +242,60 @@ Going further
 ## is every package in .Library either base or recommended?
 ## study package naming style (all lower case, contains '.', etc
 ## use `fields` argument to installed.packages() to get more info and use it!
+
+devtools::session_info()
 ```
+
+    ## Session info -------------------------------------------------------------
+
+    ##  setting  value                       
+    ##  version  R version 3.4.3 (2017-11-30)
+    ##  system   x86_64, mingw32             
+    ##  ui       RTerm                       
+    ##  language (EN)                        
+    ##  collate  English_United States.1252  
+    ##  tz       America/Chicago             
+    ##  date     2018-01-31
+
+    ## Packages -----------------------------------------------------------------
+
+    ##  package    * version date       source        
+    ##  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.3)
+    ##  backports    1.1.2   2017-12-13 CRAN (R 3.4.3)
+    ##  base       * 3.4.3   2017-12-06 local         
+    ##  bindr        0.1     2016-11-13 CRAN (R 3.4.3)
+    ##  bindrcpp   * 0.2     2017-06-17 CRAN (R 3.4.3)
+    ##  cli          1.0.0   2017-11-05 CRAN (R 3.4.3)
+    ##  compiler     3.4.3   2017-12-06 local         
+    ##  crayon       1.3.4   2017-09-16 CRAN (R 3.4.3)
+    ##  datasets   * 3.4.3   2017-12-06 local         
+    ##  devtools     1.13.4  2017-11-09 CRAN (R 3.4.3)
+    ##  digest       0.6.14  2018-01-14 CRAN (R 3.4.3)
+    ##  dplyr      * 0.7.4   2017-09-28 CRAN (R 3.4.3)
+    ##  evaluate     0.10.1  2017-06-24 CRAN (R 3.4.3)
+    ##  fs         * 1.1.0   2018-01-26 CRAN (R 3.4.3)
+    ##  glue         1.2.0   2017-10-29 CRAN (R 3.4.3)
+    ##  graphics   * 3.4.3   2017-12-06 local         
+    ##  grDevices  * 3.4.3   2017-12-06 local         
+    ##  htmltools    0.3.6   2017-04-28 CRAN (R 3.4.3)
+    ##  knitr        1.19    2018-01-29 CRAN (R 3.4.3)
+    ##  magrittr     1.5     2014-11-22 CRAN (R 3.4.3)
+    ##  memoise      1.1.0   2017-04-21 CRAN (R 3.4.3)
+    ##  methods    * 3.4.3   2017-12-06 local         
+    ##  pillar       1.1.0   2018-01-14 CRAN (R 3.4.3)
+    ##  pkgconfig    2.0.1   2017-03-21 CRAN (R 3.4.3)
+    ##  R6           2.2.2   2017-06-17 CRAN (R 3.4.3)
+    ##  Rcpp         0.12.15 2018-01-20 CRAN (R 3.4.3)
+    ##  rlang        0.1.6   2017-12-21 CRAN (R 3.4.3)
+    ##  rmarkdown    1.8     2017-11-17 CRAN (R 3.4.3)
+    ##  rprojroot    1.3-2   2018-01-03 CRAN (R 3.4.3)
+    ##  stats      * 3.4.3   2017-12-06 local         
+    ##  stringi      1.1.6   2017-11-17 CRAN (R 3.4.2)
+    ##  stringr      1.2.0   2017-02-18 CRAN (R 3.4.3)
+    ##  tibble       1.4.2   2018-01-22 CRAN (R 3.4.3)
+    ##  tools        3.4.3   2017-12-06 local         
+    ##  usethis    * 1.2.0   2018-01-19 CRAN (R 3.4.3)
+    ##  utf8         1.1.3   2018-01-03 CRAN (R 3.4.3)
+    ##  utils      * 3.4.3   2017-12-06 local         
+    ##  withr        2.1.1   2017-12-19 CRAN (R 3.4.3)
+    ##  yaml         2.1.16  2017-12-12 CRAN (R 3.4.3)

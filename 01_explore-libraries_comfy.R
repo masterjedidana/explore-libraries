@@ -2,16 +2,17 @@
 #' output: github_document
 #' ---
 #' 
+
+## Libraries 
+
 library(usethis)
+library(fs)
+library(dplyr)
 
 #' Which libraries does R search for packages?
 .libPaths()
 .Library # defualt library 
-
-library(fs)
 path_real(.Library) # show the true path (not sympolic link)
-
-# try .libPaths(), .Library
 
 
 #' Installed packages
@@ -36,7 +37,6 @@ summary(pk$Version)
 ##   * what proportion need compilation?
 ##   * how break down re: version of R they were built on
 
-library(dplyr)
 ## for tidyverts, here are some useful patterns
 # data %>% count(var)
 pk %>% count(LibPath)
@@ -81,9 +81,7 @@ ipt2 %>%
 ## study package naming style (all lower case, contains '.', etc
 ## use `fields` argument to installed.packages() to get more info and use it!
 
-
-
-
+devtools::session_info()
 
 
 
