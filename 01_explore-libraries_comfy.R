@@ -1,4 +1,7 @@
-
+#' ---
+#' output: github_document
+#' ---
+#' 
 library(usethis)
 
 #' Which libraries does R search for packages?
