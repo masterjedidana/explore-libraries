@@ -14,6 +14,7 @@ library(dplyr)
 .Library # defualt library 
 path_real(.Library) # show the true path (not sympolic link)
 
+#+ line added in browser 
 
 #' Installed packages
 
