@@ -19,4 +19,6 @@ This is a line I added from github
 
 I need coffee 
 
-Wingardium Leviosaaaaaa.
+
+WinGARdium Leviosa.
+
