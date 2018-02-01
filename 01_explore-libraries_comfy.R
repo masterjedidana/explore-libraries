@@ -14,12 +14,10 @@ library(dplyr)
 .Library # defualt library 
 path_real(.Library) # show the true path (not sympolic link)
 
+#+ line added in browser 
 
 #' Installed packages
 
-## use installed.packages() to get all installed packages
-## if you like working with data frame or tibble, make it so right away!
-## remember to use View() or similar to inspect
 head(installed.packages())
 pk <- as.data.frame(installed.packages())
 
@@ -38,11 +36,9 @@ summary(pk$Version)
 ##   * how break down re: version of R they were built on
 
 ## for tidyverts, here are some useful patterns
-# data %>% count(var)
+
 pk %>% count(LibPath)
 pk %>% count(LibPath, Priority)
-# data %>% count(var1, var2)
-# data %>% count(var) %>% mutate(prop = n / sum(n))
 
 ##   * what proportion need compilation? # have C++?
 pk %>%
